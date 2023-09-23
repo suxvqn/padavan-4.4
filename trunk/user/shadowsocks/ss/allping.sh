@@ -7,7 +7,7 @@ do
 if [ "$num" != "20" ]; then
 /etc_ro/ss/ping.sh $line >/dev/null 2>&1 &
 else
-sleep 10
+sleep 5
 num=1
 fi
 num=`expr $num + 1`
