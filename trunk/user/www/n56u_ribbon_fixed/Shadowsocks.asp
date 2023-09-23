@@ -419,6 +419,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 		}
 		//订阅节点
 		function dlink() {
+		ddlink();
 		ctime();
 			var ns = {};
 			ns[1] = "dlink";
@@ -436,6 +437,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 					setTimeout("dtime();$j('#table99').bootstrapTable('refresh');document.getElementById('btn_update_link').value='更新所有订阅服务器节点';",1000);
 				}
 			});
+		aping_dlink();
 		}
 		//清空节点
 		function ddlink() {
