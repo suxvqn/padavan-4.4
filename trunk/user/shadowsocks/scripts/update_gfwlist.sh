@@ -5,6 +5,7 @@ set -e -o pipefail
 #GFWLIST_URL="$(nvram get gfwlist_url)"
 logger -st "gfwlist" "Starting update..."
 curl -k -s -o /etc/storage/gfwlist/gfwlist_list_origin.conf --connect-timeout 15 --retry 5 https://gitlab.com/gfwlist/gfwlist/raw/master/gfwlist.txt
+rm -f /etc/storage/gfwlist/gfwlist_list.conf
 base64 -d /etc/storage/gfwlist/gfwlist_list_origin.conf > /etc/storage/gfwlist/gfwlist_list.conf
 count=`awk '{print NR}' /etc/storage/gfwlist/gfwlist_list.conf|tail -n1`
 mtd_storage.sh save >/dev/null 2>&1
