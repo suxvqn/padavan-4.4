@@ -214,7 +214,7 @@ function showMRULESList(){
                                     <a href="Advanced_ddnsto.asp"><#menu5_34_1#></a>
                                 </li>
 								<li id="wilink" style="display:none">
-                                    <a href="Advanced_wireguard.asp"><#menu5_35_1#></a>
+                                    <a href="Advanced_wireguard.asp" class="hidden-link"><#menu5_35_1#></a>
                                 </li>
                             </ul>
                         </div>
