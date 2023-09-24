@@ -1,5 +1,5 @@
-SRC_NAME = wireguard-tools-1.0.20200827
-SRC_URL = https://git.zx2c4.com/wireguard-tools/snapshot/wireguard-tools-1.0.20200827.tar.xz
+SRC_NAME = wireguard-tools-1.0.20210914
+SRC_URL = https://git.zx2c4.com/wireguard-tools/snapshot/wireguard-tools-1.0.20210914.tar.xz
 THISDIR = $(shell pwd)
 
 all: download_test extract_test
