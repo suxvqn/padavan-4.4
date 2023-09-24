@@ -8,11 +8,13 @@ curl -k -s -o /tmp/gfwlist_list_origin.conf --connect-timeout 15 --retry 5 https
 base64 -d /tmp/gfwlist_list_origin.conf > /tmp/gfwlist_list.conf
 count=`awk '{print NR}' /tmp/gfwlist_list.conf|tail -n1`
 if [ $count -gt 1000 ]; then
+mkdir -p /etc/storage/gfwlist/
 rm -f /etc/storage/gfwlist/gfwlist_listnew.conf
 cp -r /tmp/gfwlist_list.conf /etc/storage/gfwlist/gfwlist_listnew.conf
+sleep 3
+rm -f /etc/storage/gfwlist/gfwlist_list.conf
+cp -r /etc/storage/gfwlist_listnew.conf /etc/storage/gfwlist/gfwlist_list.conf
 ##mtd_storage.sh save >/dev/null 2>&1
-mkdir -p /etc/storage/gfwlist/
-cp -rf /etc/storage/gfwlist/gfwlist_listnew.conf /etc/storage/gfwlist_list.conf
 logger -st "gfwlist" "Update done"
 if [ $(nvram get ss_enable) = 1 ]; then
 lua /etc_ro/ss/gfwcreate.lua
