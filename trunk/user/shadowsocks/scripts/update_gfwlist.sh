@@ -4,17 +4,10 @@ set -e -o pipefail
 [ "$1" != "force" ] && [ "$(nvram get ss_update_gfwlist)" != "1" ] && exit 0
 #GFWLIST_URL="$(nvram get gfwlist_url)"
 logger -st "gfwlist" "Starting update..."
-curl -k -s -o /tmp/gfwlist_list_origin.conf --connect-timeout 15 --retry 5 https://gitlab.com/gfwlist/gfwlist/raw/master/gfwlist.txt
-base64 -d /tmp/gfwlist_list_origin.conf > /tmp/gfwlist_list.conf
-count=`awk '{print NR}' /tmp/gfwlist_list.conf|tail -n1`
-if [ $count -gt 1000 ]; then
-mkdir -p /etc/storage/gfwlist/
-rm -f /etc/storage/gfwlist/gfwlist_listnew.conf
-cp -r /tmp/gfwlist_list.conf /etc/storage/gfwlist/gfwlist_listnew.conf
-sleep 3
-rm -f /etc/storage/gfwlist/gfwlist_list.conf
-cp -r /etc/storage/gfwlist_listnew.conf /etc/storage/gfwlist/gfwlist_list.conf
-##mtd_storage.sh save >/dev/null 2>&1
+curl -k -s -o /etc/storage/gfwlist/gfwlist_list_origin.conf --connect-timeout 15 --retry 5 https://gitlab.com/gfwlist/gfwlist/raw/master/gfwlist.txt
+base64 -d /etc/storage/gfwlist/gfwlist_list_origin.conf > /etc/storage/gfwlist/gfwlist_list.conf
+count=`awk '{print NR}' /etc/storage/gfwlist/gfwlist_list.conf|tail -n1`
+mtd_storage.sh save >/dev/null 2>&1
 logger -st "gfwlist" "Update done"
 if [ $(nvram get ss_enable) = 1 ]; then
 lua /etc_ro/ss/gfwcreate.lua
@@ -25,6 +18,6 @@ fi
 else
 logger -st "gfwlist" "列表下载失败,请重试！"
 fi
-rm -f /tmp/gfwlist_list_origin.conf
-rm -f /tmp/gfwlist_list.conf
+rm -f /etc/storage/gfwlist/gfwlist_list_origin.conf
+#rm -f /tmp/gfwlist_list.conf
 
