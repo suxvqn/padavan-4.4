@@ -9,6 +9,7 @@ rm -f /etc/storage/gfwlist/gfwlist_list.conf
 base64 -d /etc/storage/gfwlist/gfwlist_list_origin.conf > /etc/storage/gfwlist/gfwlist_list.conf
 count=`awk '{print NR}' /etc/storage/gfwlist/gfwlist_list.conf|tail -n1`
 mtd_storage.sh save >/dev/null 2>&1
+rm -f /etc/storage/gfwlist/gfwlist_list_origin.conf
 logger -st "gfwlist" "Update done"
 if [ $(nvram get ss_enable) = 1 ]; then
 lua /etc_ro/ss/gfwcreate.lua
@@ -19,6 +20,5 @@ fi
 else
 logger -st "gfwlist" "列表下载失败,请重试！"
 fi
-rm -f /etc/storage/gfwlist/gfwlist_list_origin.conf
 #rm -f /tmp/gfwlist_list.conf
 
