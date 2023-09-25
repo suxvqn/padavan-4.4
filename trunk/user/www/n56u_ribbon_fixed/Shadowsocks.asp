@@ -618,7 +618,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 		function cellStylesales(value, row, index) {
 			var ping = row.ping
 			if (typeof (ping) == "undefined") {
-				return ""
+				del(row.ids);
 			} else if (ping < 100) {
 				return {
 					css: {
@@ -634,11 +634,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 					}
 				};
 			} else {
-				return {
-					css: {
-						background: '#f44336',
-						color: '#000'
-					}
+					del(row.ids);
 				};
 			}
 		}
