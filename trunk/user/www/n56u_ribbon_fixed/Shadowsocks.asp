@@ -595,7 +595,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 							width: '50px',
 							cellStyle: cellStylesales,
 							formatter: actionFormatter2,
-							sortable: true
+							sortable: 'asc'
 						}, {
 							field: 'lost',
 							title: '丢包',
@@ -612,11 +612,14 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 							formatter: actionFormatter
 						}]
 					});			
+
+
 		}
 		function cellStylesales(value, row, index) {
 			var ping = row.ping
 			if (typeof (ping) == "undefined") {
-				return ""
+				del(row.ids);
+				return
 			} else if (ping < 100) {
 				return {
 					css: {
@@ -632,11 +635,15 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 					}
 				};
 			} else {
-				return {
+					del(row.ids);
+					return
+<!--
+					return {
 					css: {
 						background: '#f44336',
 						color: '#000'
 					}
+-->
 				};
 			}
 		}
