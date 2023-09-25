@@ -419,7 +419,6 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 		}
 		//订阅节点
 		function dlink() {
-		ddlink();
 		ctime();
 			var ns = {};
 			ns[1] = "dlink";
@@ -470,7 +469,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 						sortName: 'ping',
 						sortOrder: "asc",
 						sidePagination: 'client',
-						pageSize: 50,
+						pageSize: 15,
 						pageList: [15, 25, 35, 50], // 分页显示记录数
 						uniqueId: "ids",
 						ajax:function(request) {
@@ -635,14 +634,12 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 					}
 				};
 			} else {
-					del(row.ids);
-					return ""
-					//return {
-					//css: {
-						//background: '#f44336',
-						//color: '#000'
-					//}
-				//};
+					return {
+					css: {
+						background: '#f44336',
+						color: '#000'
+					}
+				};
 			}
 		}
 		function actionFormatter2(value, row, index) {
