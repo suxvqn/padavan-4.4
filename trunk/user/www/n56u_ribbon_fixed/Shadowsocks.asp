@@ -596,7 +596,8 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 							width: '50px',
 							cellStyle: cellStylesales,
 							formatter: actionFormatter2,
-							sortable: 'asc'
+							sortable: true,
+							sortOrder: "asc"
 						}, {
 							field: 'lost',
 							title: '丢包',
