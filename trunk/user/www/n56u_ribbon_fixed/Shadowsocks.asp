@@ -470,7 +470,8 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 						sortName: 'ids',
 						sortOrder: "desc",
 						sidePagination: 'client',
-						pageSize: 15,
+						pageSize: 50,
+						//pageSize: 15,
 						pageList: [15, 25, 35, 50], // 分页显示记录数
 						uniqueId: "ids",
 						ajax:function(request) {
