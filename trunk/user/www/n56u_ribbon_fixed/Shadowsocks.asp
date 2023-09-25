@@ -434,9 +434,9 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 				},
 				success: function (response) {
 					setTimeout("dtime();$j('#table99').bootstrapTable('refresh');document.getElementById('btn_update_link').value='更新所有订阅服务器节点';",1000);
+					aping_dlink();
 				}
 			});
-		aping_dlink();
 		}
 		//清空节点
 		function ddlink() {
@@ -617,12 +617,8 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 		function cellStylesales(value, row, index) {
 			var ping = row.ping
 			if (typeof (ping) == "undefined") {
-				return {
-					css: {
-						display: 'none'
-					}
-				};
-				//return ""
+				del(row.ids);
+				return ""
 			} else if (ping < 100) {
 				return {
 					css: {
