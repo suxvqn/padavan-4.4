@@ -636,11 +636,13 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 					}
 				};
 			} else {
-					return {
-					css: {
-						background: '#f44336',
-						color: '#000'
-					}
+					del(row.ids);
+					return ""
+					//return {
+					//css: {
+						//background: '#f44336',
+						//color: '#000'
+					//}
 				};
 			}
 		}
