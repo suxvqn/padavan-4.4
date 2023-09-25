@@ -467,8 +467,8 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 						pageNumber: 1,
 						pagination: true,
 						sortable: true,
-						sortName: 'ids',
-						//sortOrder: "desc",
+						sortName: 'ping',
+						sortOrder: "asc",
 						sidePagination: 'client',
 						pageSize: 50,
 						pageList: [15, 25, 35, 50], // 分页显示记录数
@@ -564,7 +564,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 							width: '30px',
 							align: 'center',
 							valign: 'middle',
-							//sortable: true
+							sortable: true
 						}, {
 							field: 'type',
 							title: '类型',
@@ -595,7 +595,6 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 							width: '50px',
 							cellStyle: cellStylesales,
 							formatter: actionFormatter2,
-							sortOrder: "asc",
 							sortable: true
 						}, {
 							field: 'lost',
