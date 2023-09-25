@@ -620,6 +620,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 			if (typeof (ping) == "undefined") {
 				del(row.ids);
 				return
+				//return ""
 			} else if (ping < 100) {
 				return {
 					css: {
