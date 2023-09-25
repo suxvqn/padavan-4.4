@@ -596,8 +596,8 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 							width: '50px',
 							cellStyle: cellStylesales,
 							formatter: actionFormatter2,
-							sortable: true,
-							sortOrder: "asc"
+							//sortable: true,
+							sortOrder: 'asc'
 						}, {
 							field: 'lost',
 							title: '丢包',
@@ -620,6 +620,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 		function cellStylesales(value, row, index) {
 			var ping = row.ping
 			if (typeof (ping) == "undefined") {
+				del(row.ids);
 				return ""
 			} else if (ping < 100) {
 				return {
