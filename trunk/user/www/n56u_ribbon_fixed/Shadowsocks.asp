@@ -468,10 +468,9 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 						pagination: true,
 						sortable: true,
 						sortName: 'ids',
-						sortOrder: "desc",
+						//sortOrder: "desc",
 						sidePagination: 'client',
 						pageSize: 50,
-						//pageSize: 15,
 						pageList: [15, 25, 35, 50], // 分页显示记录数
 						uniqueId: "ids",
 						ajax:function(request) {
@@ -596,8 +595,8 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 							width: '50px',
 							cellStyle: cellStylesales,
 							formatter: actionFormatter2,
-							//sortable: true,
-							sortOrder: 'asc'
+							sortOrder: "asc",
+							sortable: true
 						}, {
 							field: 'lost',
 							title: '丢包',
