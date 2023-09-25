@@ -469,7 +469,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 						sortName: 'ping',
 						sortOrder: "asc",
 						sidePagination: 'client',
-						pageSize: 15,
+						pageSize: 20,
 						pageList: [15, 25, 35, 50], // 分页显示记录数
 						uniqueId: "ids",
 						ajax:function(request) {
@@ -617,8 +617,12 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 		function cellStylesales(value, row, index) {
 			var ping = row.ping
 			if (typeof (ping) == "undefined") {
-				del(row.ids);
-				return ""
+				return {
+					css: {
+						display: 'none'
+					}
+				};
+				//return ""
 			} else if (ping < 100) {
 				return {
 					css: {
