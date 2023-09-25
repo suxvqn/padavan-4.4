@@ -565,7 +565,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 							width: '30px',
 							align: 'center',
 							valign: 'middle',
-							sortable: true
+							//sortable: true
 						}, {
 							field: 'type',
 							title: '类型',
