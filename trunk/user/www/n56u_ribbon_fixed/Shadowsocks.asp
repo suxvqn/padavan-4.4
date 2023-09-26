@@ -469,7 +469,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 						sortName: 'ping',
 						sortOrder: "asc",
 						sidePagination: 'client',
-						pageSize: 20,
+						pageSize: 15,
 						pageList: [15, 25, 35, 50], // 分页显示记录数
 						uniqueId: "ids",
 						ajax:function(request) {
