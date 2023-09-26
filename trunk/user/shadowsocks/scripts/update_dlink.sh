@@ -33,6 +33,7 @@ grep -v '^#' /etc/storage/ss_dlink.sh | grep -v "^$" > /tmp/dlist.txt
 dbus list ssconf_basic_json | cut -d '_' -f 4 | cut -d '=' -f 1 > /tmp/dlinkold.txt
 lua /etc_ro/ss/dlink.lua
 mtd_storage.sh save >/dev/null 2>&1
+/etc_ro/ss/allping.sh
 }
 
 case $1 in
