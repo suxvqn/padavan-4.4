@@ -617,7 +617,7 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 		function cellStylesales(value, row, index) {
 			var ping = row.ping
 			if (typeof (ping) == "undefined") {
-				del(row.ids);
+				//del(row.ids);
 				return ""
 			} else if (ping < 100) {
 				return {
