@@ -616,10 +616,10 @@ setTimeout('document.getElementById("btn_ctime").style.display="none";',1000);
 		}
 		function cellStylesales(value, row, index) {
 			var ping = row.ping
-			if (typeof (ping) == "undefined") {
-				//del(row.ids);
-				return ""
-			} else if (ping < 100) {
+			//if (typeof (ping) == "undefined") {
+				//return ""
+			//} else 
+			if (ping < 100) {
 				return {
 					css: {
 						background: '#04B404',
